@@ -12,6 +12,7 @@ $(".saveBtn").on("click" , function(){
 
 let plannerHours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 let currentTime = moment().hour();
+let ampm = currentTime >= 12 ? 'pm' : 'am';
 console.log(currentTime); //current computer is 1-hr behind
 // console.log($(".textBox"))
 //Change Textarea Color Based on current time
@@ -35,6 +36,10 @@ $(".textBox").each(function(index){
         $(this).css("background-color" , "red")
     }
 });
+
+//Display Current Time
+$("#currentDay").append(currentTime , " " , ampm);
+
 // for (i=0; i < plannerHours.length; i++) {
 
 // //Append current time to textBox Row
